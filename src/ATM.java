@@ -1,34 +1,25 @@
 public class ATM {
-    private int balanceAtm;
-    private int currentBalanceCard;
+    private int currentBalanceAtm;
     private int receiptMoney;
     private int contributionMoney;
-    public ATM(int currentBalanceCard, int balanceAtm, int receiptMoney, int contributionMoney) {
-        this.currentBalanceCard = currentBalanceCard;
-        this.balanceAtm = balanceAtm;
+    public ATM(int currentBalanceAtm, int receiptMoney, int contributionMoney) {
+        this.currentBalanceAtm = currentBalanceAtm;
         this.receiptMoney = receiptMoney;
         this.contributionMoney = contributionMoney;
-
     }
-    public int withdrawalBalanceCard() {
-        if (receiptMoney > balanceAtm){
+    public int withdrawalBalanceAtm() {
+        if (receiptMoney > currentBalanceAtm){
             return 0;
         }
-        if (currentBalanceCard < receiptMoney){
-            return 0;
+        if (currentBalanceAtm >= receiptMoney) {
+            currentBalanceAtm = currentBalanceAtm - receiptMoney;
+            return currentBalanceAtm;
         }
-        if (currentBalanceCard >= receiptMoney) {
-            currentBalanceCard = currentBalanceCard - receiptMoney;
-            return currentBalanceCard;
-        }
-
-        return currentBalanceCard;=
+        return currentBalanceAtm;
     }
 
-    public int replenishmentBalanceCard() {
-        currentBalanceCard = currentBalanceCard + contributionMoney;
-        return currentBalanceCard;
+    public int replenishmentBalanceAtm() {
+        currentBalanceAtm = currentBalanceAtm + contributionMoney;
+        return currentBalanceAtm;
     }
-
-
 }
