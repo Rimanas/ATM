@@ -3,7 +3,13 @@ public class ATM {
     private int currentBalanceCard;
     private int receiptMoney;
     private int contributionMoney;
+    public ATM(int currentBalanceCard, int balanceAtm, int receiptMoney, int contributionMoney) {
+        this.currentBalanceCard = currentBalanceCard;
+        this.balanceAtm = balanceAtm;
+        this.receiptMoney = receiptMoney;
+        this.contributionMoney = contributionMoney;
 
+    }
     public int withdrawalBalanceCard() {
         if (receiptMoney > balanceAtm){
             return 0;
@@ -16,7 +22,7 @@ public class ATM {
             return currentBalanceCard;
         }
 
-        return currentBalanceCard;
+        return currentBalanceCard;=
     }
 
     public int replenishmentBalanceCard() {
@@ -24,11 +30,5 @@ public class ATM {
         return currentBalanceCard;
     }
 
-    public ATM(int currentBalanceCard, int balanceAtm, int receiptMoney, int contributionMoney) {
-        this.currentBalanceCard = currentBalanceCard;
-        this.balanceAtm = balanceAtm;
-        this.receiptMoney = receiptMoney;
-        this.contributionMoney = contributionMoney;
 
-    }
 }
