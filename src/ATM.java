@@ -1,13 +1,9 @@
 public class ATM {
     private int currentBalanceAtm;
-    private int receiptMoney;
-    private int contributionMoney;
-    public ATM(int currentBalanceAtm, int receiptMoney, int contributionMoney) {
+    public ATM(int currentBalanceAtm) {
         this.currentBalanceAtm = currentBalanceAtm;
-        this.receiptMoney = receiptMoney;
-        this.contributionMoney = contributionMoney;
     }
-    public int withdrawalBalanceAtm() {
+    public int withdrawalBalanceAtm(int receiptMoney) {
         if (receiptMoney > currentBalanceAtm){
             return 0;
         }
@@ -17,8 +13,7 @@ public class ATM {
         }
         return currentBalanceAtm;
     }
-
-    public int replenishmentBalanceAtm() {
+    public int replenishmentBalanceAtm(int contributionMoney) {
         currentBalanceAtm = currentBalanceAtm + contributionMoney;
         return currentBalanceAtm;
     }
